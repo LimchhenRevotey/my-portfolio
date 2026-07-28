@@ -4,6 +4,7 @@ import ContactSection from '@/components/contact.section.vue';
 import ExperienceSection from '@/components/experience.section.vue';
 import HeroSection from '@/components/hero.section.vue';
 import ProjectsSection from '@/components/projects.section.vue';
+import SkillsSection from '@/components/skills.section.vue';
 import MainLayouts from '@/layouts/mainLayouts.vue';
 </script>
 
@@ -13,6 +14,7 @@ import MainLayouts from '@/layouts/mainLayouts.vue';
         <AboutSection></AboutSection>
         <ExperienceSection></ExperienceSection>
         <ProjectsSection></ProjectsSection>
+        <SkillsSection></SkillsSection>
         <ContactSection></ContactSection>
 
     </MainLayouts>

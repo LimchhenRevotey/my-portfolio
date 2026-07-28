@@ -109,7 +109,6 @@ main, .footer {
 }
 
 /* GLASS CARD BASE */
-
 .glass-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -425,7 +424,6 @@ main, .footer {
 }
 
 /* EXPERIENCE */
-
 .exp-card {
   display: flex;
   gap: 1rem;
@@ -534,39 +532,82 @@ main, .footer {
     box-shadow:0 0 10px rgba(0,242,254,0.15);
   }
 
+/* ===== SKILLS ===== */
+  .marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
 
-/* SKILLS / GAUGES */
+.marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: marquee-scroll 20s linear infinite;
+}
 
-.gauge-card { padding: 1.5rem 1rem; }
-.gauge-svg { width: 120px; height: 120px; }
-.gauge-track {
-  fill: none;
-  stroke: var(--card-border);
-  stroke-width: 10;
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
 }
-.gauge-progress {
-  fill: none;
-  stroke: var(--accent-cyan);
-  stroke-width: 10;
-  stroke-linecap: round;
-  transform: rotate(-90deg);
-  transform-origin: 60px 60px;
-  transition: stroke-dashoffset 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-  filter: drop-shadow(0 0 6px var(--glow));
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-.gauge-text {
-  fill: var(--text);
-  font-size: 1.1rem;
-  font-weight: 700;
-  font-family: 'Space Grotesk', sans-serif;
+
+.skill-card {
+  --glow: var(--accent-cyan); 
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  width: 140px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out, border-color 0.35s ease-in-out;
 }
-.gauge-label {
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: var(--glow);
+  box-shadow: 0 12px 30px -5px var(--glow);
+}
+
+.skill-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  font-size: 1.6rem;
+  background: color-mix(in srgb, var(--glow) 18%, transparent);
+  color: var(--glow);
+  transition: 0.35s ease-in-out;
+}
+
+.skill-card:hover .skill-icon-wrap {
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.skill-name {
+  color: var(--text);
   font-weight: 600;
   font-size: 0.9rem;
 }
 
 /* CONTACT */
-
 .contact-card { padding: 2rem; }
 .glass-input {
   background: var(--bg-secondary) !important;
