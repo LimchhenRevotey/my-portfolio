@@ -61,14 +61,14 @@ const educationHistory = [
                             </linearGradient>
                         </defs>
                         <circle cx="130" cy="130" r="120" fill="url(#illGrad)" opacity="0.12" />
-                        <rect x="55" y="140" width="150" height="14" rx="7" fill="url(#illGrad)" opacity="0.85" />
+                        <rect x="55" y="150" width="150" height="14" rx="7" fill="url(#illGrad)" opacity="0.85" />
                         <rect x="75" y="80" width="110" height="70" rx="10" fill="none" stroke="url(#illGrad)"
                             stroke-width="5" />
                         <rect x="90" y="95" width="80" height="8" rx="4" fill="url(#illGrad)" opacity="0.7" />
                         <rect x="90" y="110" width="55" height="8" rx="4" fill="url(#illGrad)" opacity="0.5" />
                         <rect x="90" y="125" width="65" height="8" rx="4" fill="url(#illGrad)" opacity="0.6" />
-                        <circle cx="130" cy="200" r="22" fill="url(#illGrad)" />
-                        <path d="M92 250c6-24 22-36 38-36s32 12 38 36" fill="url(#illGrad)" opacity="0.9" />
+                        <!-- <circle cx="130" cy="200" r="22" fill="url(#illGrad)" /> -->
+                        <!-- <path d="M92 250c6-24 22-36 38-36s32 12 38 36" fill="url(#illGrad)" opacity="0.9" /> -->
                     </svg>
                 </div>
 
