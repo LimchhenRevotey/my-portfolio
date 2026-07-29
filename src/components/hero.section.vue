@@ -32,10 +32,10 @@ function tick() {
 const techStack = [
     { name: 'Nuxt.js', icon: 'bi-triangle' },
     { name: 'JavaScript', icon: 'bi-filetype-js' },
-    { name: 'Bootstrap', icon: 'bi-wind' },
+    { name: 'Bootstrap', icon: 'bi-bootstrap' },
     { name: 'Node.js', icon: 'bi-hexagon' },
     { name: 'Express', icon: 'bi-lightning-charge' },
-    { name: 'VueJS', icon: 'bi-cup-hot' },
+    { name: 'VueJS', icon: 'bi-box-seam' },
     { name: 'MySQL', icon: 'bi-database' }
 ]
 const marqueeStack = [...techStack, ...techStack]
@@ -64,8 +64,9 @@ onBeforeUnmount(() => {
                         <span class="typing-line">{{ typedText }}<span class="cursor">|</span></span>
                     </h1>
                     <p class="hero-copy">
-                        I design and build fast, accessible, and delightful digital products —
-                        from pixel-perfect interfaces to robust backend systems.
+                        Full-stack developer passionate about building clean, high-performing,
+                        and responsive applications. I connect smooth user experiences with powerful backend
+                        architecture.
                     </p>
 
                     <div class="d-flex flex-wrap gap-3 mt-4">
