@@ -12,7 +12,7 @@ const skills = [
 </script>
 
 <template>
-    <section id="skills" class="section-pad overflow-hidden py-5">
+    <section id="skills" class="section overflow-hidden py-5">
         <div class="container">
             <p class="eyebrow text-center">Tools & Technologies</p>
             <h2 class="section-title text-center mb-5">My <span class="grad-text">Skills</span></h2>

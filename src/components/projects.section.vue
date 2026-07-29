@@ -5,55 +5,55 @@ const getImgUrl = (name) => {
 };
 
 const projects = ref([
-    {
+  {
     title: 'Pralong',
-    desc: 'Real-time metrics dashboard with configurable widgets and role-based access control.',
+    desc: 'An interactive online examination platform featuring secure student exam engines, dynamic performance metrics, and anti-cheating mechanisms.',
     img: getImgUrl('pralong.png'),
     tags: ['VUE', 'NODE.JS', 'MYSQL', 'BOOTSTRAP', 'HTML', 'CSS'],
-    demo: 'https://qmlsystem.tdomain.work.gd/', 
+    demo: 'https://qmlsystem.tdomain.work.gd/',
     code: 'https://github.com/kemvanny/quiz_frontend'
   },
   {
-    title: 'Movie Management System',
-    desc: 'A full-stack platform for browsing, rating and managing a movie catalog with an admin dashboard.',
-    img: getImgUrl('movie.png'),
-    tags: ['VUE', 'HTML', 'CSS', 'BOOTSTRAP'],
-    demo: 'https://limchhenrevotey.github.io/MovieManagement/', 
-    code: 'https://github.com/LimchhenRevotey/MovieManagement'
-  },
-  
+    title: 'Reab-List',
+    desc: 'A responsive web application with custom authorization mechanisms, administrative tools, and user management controls.',
+    img: getImgUrl('reabList.png'),
+    tags: ['VUE', 'HTML', 'CSS', 'BOOTSTRAP', 'JAVASCRIPT'],
+    demo: 'https://reablist.vercel.app/',
+    code: 'https://github.com/kemvanny/Vue_Project_ANT'
+  }
+  ,
   {
-    title: 'Online Exam',
-    desc: 'A full-stack platform for browsing, rating and managing a movie catalog with an admin dashboard.',
+    title: 'Pralong Admin Dashboard',
+    desc: 'A full-stack administrative portal built with Node.js and Express RESTful APIs for real-time statistical tracking and backend management.',
+    img: getImgUrl('pralongDashboard.png'),
+    tags: ['VUE', 'NODE.JS', 'MYSQL', 'BOOTSTRAP', 'HTML', 'CSS'],
+    demo: 'https://qmlsystem.tdomain.work.gd/admin/dashboard',
+    code: 'https://github.com/kemvanny/quiz_frontend'
+  },
+  {
+    title: 'Online Exam System',
+    desc: 'An academic management platform providing multi-role access for coordinating student dashboards, teacher portals, and admin workflows.',
     img: getImgUrl('onlineExam.png'),
     tags: ['HTML', 'CSS', 'BOOTSTRAP', 'JAVASCRIPT'],
-    demo: 'https://oem-user.vercel.app/', 
+    demo: 'https://oem-user.vercel.app/',
     code: 'https://github.com/toemsamat/ant-online-exam-management'
   },
   {
     title: 'Hotel Booking System',
-    desc: 'A storefront with cart, checkout flow, and inventory management built for scale.',
+    desc: 'A modern accommodation booking UI enabling users to search rooms, review details, and navigate seamless reservation flows.',
     img: getImgUrl('hotelBooking.png'),
     tags: ['JAVASCRIPT', 'BOOTSTRAP', 'HTML', 'CSS'],
-    demo: 'https://limchhenrevotey.github.io/HotelBooking/', 
+    demo: 'https://limchhenrevotey.github.io/HotelBooking/',
     code: 'https://github.com/LimchhenRevotey/HotelBooking'
   },
   {
-    title: 'E-commerce Platform',
-    desc: 'A storefront with cart, checkout flow, and inventory management built for scale.',
-    img: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=450&fit=crop&auto=format&q=80',
-    tags: ['VUE', 'BOOTSTRAP', 'EXPRESS'],
-    demo: '#', 
-    code: '#'
-  },
-  {
-    title: 'Analytics Dashboard',
-    desc: 'Real-time metrics dashboard with configurable widgets and role-based access control.',
-    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=450&fit=crop&auto=format&q=80',
-    tags: ['VUE', 'NODE.JS'],
-    demo: '#', 
-    code: '#'
-  },
+    title: 'Movie Management System',
+    desc: 'A responsive web application built for browsing, filtering, dynamic category filtering, interactive movie details, and managing an active movie catalog.',
+    img: getImgUrl('movie.png'),
+    tags: ['VUE', 'HTML', 'CSS', 'BOOTSTRAP'],
+    demo: 'https://limchhenrevotey.github.io/MovieManagement/',
+    code: 'https://github.com/LimchhenRevotey/MovieManagement'
+  }
 ]);
 </script>
 

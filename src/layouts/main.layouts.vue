@@ -23,7 +23,7 @@ import Navbar from '@/components/navbar.vue';
 </template>
 
 <style scoped>
-.content-body {
+/* .content-body {
     padding-top: 60px;
-}
+} */
 </style>
