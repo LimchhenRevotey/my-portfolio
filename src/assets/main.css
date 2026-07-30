@@ -8,6 +8,7 @@
   --text-muted: #4b5768;
   --card-bg: rgba(255, 255, 255, 0.55);
   --card-border: rgba(255, 255, 255, 0.7);
+  opacity: 0.88;
   --nav-bg: rgba(255, 255, 255, 0.6);
   --accent-cyan: #38BDF8;
   --accent-purple: #7c3aed;
@@ -23,6 +24,7 @@
   --text-muted: #97a3bf;
   --card-bg: rgba(255, 255, 255, 0.06);
   --card-border: rgba(148, 233, 255, 0.18);
+  opacity: 0.88;
   --nav-bg: rgba(13, 20, 36, 0.65);
   --accent-cyan: #38BDF8;
   --accent-purple: #a78bfa;
@@ -209,7 +211,7 @@ main, .footer {
   border-radius: 2px;
   background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
 }
-.navbar, .nav-bg, .glass-nav {
+/* .navbar, .nav-bg, .glass-nav {
   background-color: rgba(255, 255, 255, 0.85) !important; 
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
@@ -221,7 +223,7 @@ main, .footer {
   background-color: rgba(20, 17, 47, 0.85) !important;
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-}
+} */
 .theme-toggle {
   width: 38px;
   height: 38px;
