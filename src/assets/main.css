@@ -8,8 +8,7 @@
   --text-muted: #4b5768;
   --card-bg: rgba(255, 255, 255, 0.55);
   --card-border: rgba(255, 255, 255, 0.7);
-  opacity: 0.88;
-  --nav-bg: rgba(255, 255, 255, 0.6);
+  --nav-bg: rgba(255, 255, 255, 0.88);
   --accent-cyan: #38BDF8;
   --accent-purple: #7c3aed;
   --glow: rgba(6, 182, 212, 0.35);
@@ -24,8 +23,7 @@
   --text-muted: #97a3bf;
   --card-bg: rgba(255, 255, 255, 0.06);
   --card-border: rgba(148, 233, 255, 0.18);
-  opacity: 0.88;
-  --nav-bg: rgba(13, 20, 36, 0.65);
+  --nav-bg: rgba(13, 20, 36, 0.88);
   --accent-cyan: #38BDF8;
   --accent-purple: #a78bfa;
   --glow: rgba(34, 211, 238, 0.45);
