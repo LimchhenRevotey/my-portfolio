@@ -1,5 +1,6 @@
 <script setup>
 import { reactive, ref } from 'vue'
+import BaseCard from '@/components/ui/base.card.vue'
 
 const contactForm = reactive({ name: '', email: '', message: '' })
 const errors = reactive({ name: '', email: '', message: '' })
@@ -15,7 +16,7 @@ function validateName() {
   } else if (contactForm.name.trim().length < 2) {
     errors.name = 'Name must be at least 2 characters.'
   } else {
-    errors.name = '' 
+    errors.name = ''
   }
 }
 
@@ -25,7 +26,7 @@ function validateEmail() {
   } else if (!isValidEmail(contactForm.email.trim())) {
     errors.email = 'Please enter a valid email address.'
   } else {
-    errors.email = '' 
+    errors.email = ''
   }
 }
 
@@ -107,7 +108,7 @@ function submitContact() {
 
         <!-- Right Side: Contact Form -->
         <div class="col-lg-7">
-          <div class="contact-glass h-100">
+          <BaseCard :hoverable="false" :full-height="true">
             <form @submit.prevent="submitContact" novalidate>
               <!-- Name Input -->
               <div class="mb-3">
@@ -147,7 +148,7 @@ function submitContact() {
                 <span class="ms-2">{{ formSubmitted ? 'Message Sent!' : 'Send Message' }}</span>
               </button>
             </form>
-          </div>
+          </BaseCard>
         </div>
       </div>
     </div>

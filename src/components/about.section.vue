@@ -1,5 +1,6 @@
 <script setup>
 import { reactive } from 'vue'
+import BaseCard from '@/components/ui/base.card.vue'
 const stats = [
     { value: 5, suffix: '1+', label: 'Years Experience', icon: 'bi-briefcase' },
     { value: 50, suffix: '4+', label: 'Projects Completed', icon: 'bi-kanban' },
@@ -67,11 +68,11 @@ function scrollToSection(id) {
 
                         <div class="row g-3 mt-3">
                             <div class="col-4" v-for="(stat, i) in stats" :key="stat.label">
-                                <div class="glass-card stat-card text-center">
+                                <BaseCard class="text-center">
                                     <i class="bi" :class="stat.icon"></i>
                                     <div class="stat-value">{{ displayedStats[i].stat }}{{ stat.suffix }}</div>
                                     <div class="stat-label">{{ stat.label }}</div>
-                                </div>
+                                </BaseCard>
                             </div>
                         </div>
 

@@ -1,21 +1,22 @@
 <script setup>
+import BaseCard from '@/components/ui/base.card.vue'
 const workHistory = [
     {
-        role: 'Full-Stack Developer (Academic Project: Pralong)',
+        role: 'Full-Stack Developer (Pralong)',
         org: 'ANT Technology Training Center',
         period: 'Mar 2026 — Jul 2026',
         icon: 'bi-code-slash',
         desc: 'Built RESTful APIs with Node.js/Express & MySQL. Implemented JWT auth, auto-save, exam security features, and deployed to cloud.'
     },
     {
-        role: 'Frontend Developer (Academic Project: Reab-List)',
+        role: 'Frontend Developer (Reab-List)',
         org: 'ANT Technology Training Center',
         period: 'Dec 2025 — Feb 2026',
         icon: 'bi-window-stack',
         desc: 'Developed UI components using Vue.js & Bootstrap 5. Integrated frontend authentication, authorization, and admin tools.'
     },
     {
-        role: 'Project Leader & Frontend Developer (Online Management System)',
+        role: 'Frontend Developer (Online Exam System)',
         org: 'ANT Technology Training Center',
         period: 'Jun 2025 — Sep 2025',
         icon: 'bi-diagram-3',
@@ -56,14 +57,16 @@ const educationHistory = [
 
             <div class="row align-items-center gy-4">
                 <div class="col-lg-4 d-flex flex-column gap-4">
-                    <div class="glass-card exp-card" v-for="item in workHistory" :key="item.role">
-                        <div class="exp-icon"><i class="bi" :class="item.icon"></i></div>
-                        <div>
-                            <h5 class="mb-1">{{ item.role }}</h5>
-                            <p class="exp-org mb-1">{{ item.org }} · {{ item.period }}</p>
-                            <p class="exp-desc mb-0">{{ item.desc }}</p>
+                    <BaseCard v-for="item in workHistory" :key="item.role" class="exp-card">
+                        <div class="d-flex gap-3 align-items-start">
+                            <div class="exp-icon"><i class="bi" :class="item.icon"></i></div>
+                            <div>
+                                <h5 class="mb-1">{{ item.role }}</h5>
+                                <p class="exp-org mb-1">{{ item.org }} · {{ item.period }}</p>
+                                <p class="exp-desc mb-0">{{ item.desc }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </BaseCard>
                 </div>
 
                 <div class="col-lg-4 text-center">
@@ -86,14 +89,16 @@ const educationHistory = [
                 </div>
 
                 <div class="col-lg-4 d-flex flex-column gap-4">
-                    <div class="glass-card exp-card" v-for="item in educationHistory" :key="item.role">
-                        <div class="exp-icon"><i class="bi" :class="item.icon"></i></div>
-                        <div>
-                            <h5 class="mb-1">{{ item.role }}</h5>
-                            <p class="exp-org mb-1">{{ item.org }} · {{ item.period }}</p>
-                            <p class="exp-desc mb-0">{{ item.desc }}</p>
+                    <BaseCard v-for="item in educationHistory" :key="item.role" class="exp-card">
+                        <div class="d-flex gap-3 align-items-start">
+                            <div class="exp-icon"><i class="bi" :class="item.icon"></i></div>
+                            <div>
+                                <h5 class="mb-1">{{ item.role }}</h5>
+                                <p class="exp-org mb-1">{{ item.org }} · {{ item.period }}</p>
+                                <p class="exp-desc mb-0">{{ item.desc }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </BaseCard>
                 </div>
             </div>
         </div>

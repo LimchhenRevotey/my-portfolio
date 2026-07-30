@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import logoDark from '@/assets/images/logo-dark.png'
-import logoLight from '@/assets/images/logo-light.png'
+import logoDark from '@/assets/images/logo.dark.png'
+import logoLight from '@/assets/images/logo.light.png'
 
 const theme = ref('light')
 const navOpen = ref(false);

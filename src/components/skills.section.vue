@@ -1,4 +1,6 @@
 <script setup>
+import BaseCard from './ui/base.card.vue';
+
 const skills = [
     { name: 'HTML', icon: 'bi-filetype-html', glow: '#e34c26' },
     { name: 'CSS', icon: 'bi-filetype-css', glow: '#264de4' },
@@ -19,20 +21,20 @@ const skills = [
 
             <div class="marquee-wrapper">
                 <div class="marquee-track">
-                    <div v-for="(skill, index) in skills" :key="'a-' + index" class="skill-card"
+                    <BaseCard v-for="(skill, index) in skills" :key="'a-' + index" variant="skill"
                         :style="{ '--glow': skill.glow }">
                         <div class="skill-icon-wrap">
                             <i class="bi" :class="skill.icon"></i>
                         </div>
                         <div class="skill-name">{{ skill.name }}</div>
-                    </div>
-                    <div v-for="(skill, index) in skills" :key="'b-' + index" class="skill-card"
+                    </BaseCard>
+                    <BaseCard v-for="(skill, index) in skills" :key="'b-' + index" variant="skill"
                         :style="{ '--glow': skill.glow }">
                         <div class="skill-icon-wrap">
                             <i class="bi" :class="skill.icon"></i>
                         </div>
                         <div class="skill-name">{{ skill.name }}</div>
-                    </div>
+                    </BaseCard>
                 </div>
             </div>
         </div>

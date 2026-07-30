@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
+
 const roles = ['Full Stack Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Open Source Lover']
 const typedText = ref('')
 let roleIndex = 0
@@ -70,7 +71,8 @@ onBeforeUnmount(() => {
                     </p>
 
                     <div class="d-flex flex-wrap gap-3 mt-4">
-                        <a href="#" class="btn btn-glow-primary rounded-pill px-4 py-2">
+                        <a href="Limchhen_Revotey_Web_Developer.pdf" target="_blank"
+                            class="btn btn-glow-primary rounded-pill px-4 py-2">
                             <i class="bi bi-download me-2"></i>Resume
                         </a>
                         <a href="#" class="btn btn-outline-glow rounded-pill px-4 py-2"
