@@ -15,8 +15,6 @@ import MainLayouts from '@/layouts/main.layouts.vue';
         <SkillsSection></SkillsSection>
         <ExperienceSection></ExperienceSection>
         <ProjectsSection></ProjectsSection>
-        
         <ContactSection></ContactSection>
-
     </MainLayouts>
 </template>

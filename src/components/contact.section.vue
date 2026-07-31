@@ -1,63 +1,17 @@
 <script setup>
-import { reactive, ref } from 'vue'
-import BaseCard from '@/components/ui/base.card.vue'
-
-const contactForm = reactive({ name: '', email: '', message: '' })
-const errors = reactive({ name: '', email: '', message: '' })
-const formSubmitted = ref(false)
-function isValidEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return re.test(email)
-}
-
-function validateName() {
-  if (!contactForm.name.trim()) {
-    errors.name = 'Please enter your name.'
-  } else if (contactForm.name.trim().length < 2) {
-    errors.name = 'Name must be at least 2 characters.'
-  } else {
-    errors.name = ''
-  }
-}
-
-function validateEmail() {
-  if (!contactForm.email.trim()) {
-    errors.email = 'Please enter your email address.'
-  } else if (!isValidEmail(contactForm.email.trim())) {
-    errors.email = 'Please enter a valid email address.'
-  } else {
-    errors.email = ''
-  }
-}
-
-function validateMessage() {
-  if (!contactForm.message.trim()) {
-    errors.message = 'Please enter your message.'
-  } else if (contactForm.message.trim().length < 10) {
-    errors.message = 'Message must be at least 10 characters long.'
-  } else {
-    errors.message = ''
-  }
-}
-
-function validateAll() {
-  validateName()
-  validateEmail()
-  validateMessage()
-  return !errors.name && !errors.email && !errors.message
-}
-
-function submitContact() {
-  if (!validateAll()) return
-
-  formSubmitted.value = true
-  setTimeout(() => {
-    formSubmitted.value = false
-    contactForm.name = ''
-    contactForm.email = ''
-    contactForm.message = ''
-  }, 3000)
-}
+import BaseCard from './ui/base.card.vue'
+import BaseButton from './ui/base.button.vue'
+import { useContactForm } from '@/composables/use.form.validation.js'
+const {
+  contactForm,
+  errors,
+  formSubmitted,
+  validateName,
+  validateEmail,
+  validateMessage,
+  submitContact,
+  openEmail
+} = useContactForm()
 </script>
 
 <template>
@@ -69,7 +23,6 @@ function submitContact() {
       </h2>
 
       <div class="row g-4 justify-content-center align-items-stretch">
-        <!-- Left Side: Contact Info -->
         <div class="col-lg-5 d-flex flex-column justify-content-between">
           <div>
             <p class="section-kicker mb-1">Let's build something</p>
@@ -78,20 +31,19 @@ function submitContact() {
               Have a project in mind, or just want to talk shop? Drop a message and I'll get back to you shortly.
             </p>
 
-            <!-- Email Card -->
             <div class="info-card d-flex align-items-center gap-3 mb-4 p-3 rounded-4">
               <span class="social-icon-glow flex-shrink-0">
                 <i class="bi bi-envelope-fill"></i>
               </span>
               <div class="text-truncate">
                 <span class="d-block small text-muted">Direct Email</span>
-                <a href="mailto:revotey.limchhen@gmail.com" class="info-link fw-semibold text-truncate d-block">
-                  revotey.limchhen@gmail.com
+                <a href="#" @click="openEmail()" target="_blank" rel="noopener noreferrer"
+                  class="info-link fw-semibold text-truncate d-block">
+                  revotey.limchhenn@gmail.com
                 </a>
               </div>
             </div>
 
-            <!-- Social Links -->
             <p class="section-kicker mb-2">Follow along</p>
             <div class="d-flex gap-2">
               <a href="https://www.linkedin.com/in/limchhen-revotey-591619359/" class="social-icon-glow"
@@ -106,11 +58,9 @@ function submitContact() {
           </div>
         </div>
 
-        <!-- Right Side: Contact Form -->
         <div class="col-lg-7">
           <BaseCard :hoverable="false" :full-height="true">
             <form @submit.prevent="submitContact" novalidate>
-              <!-- Name Input -->
               <div class="mb-3">
                 <label class="form-label-cyber" for="name">Name</label>
                 <input id="name" v-model="contactForm.name" type="text" class="form-control-cyber"
@@ -121,7 +71,6 @@ function submitContact() {
                 </div>
               </div>
 
-              <!-- Email Input -->
               <div class="mb-3">
                 <label class="form-label-cyber" for="email">Email</label>
                 <input id="email" v-model="contactForm.email" type="email" class="form-control-cyber"
@@ -132,7 +81,6 @@ function submitContact() {
                 </div>
               </div>
 
-              <!-- Message Input -->
               <div class="mb-4">
                 <label class="form-label-cyber" for="message">Message</label>
                 <textarea id="message" v-model="contactForm.message" class="form-control-cyber"
@@ -143,10 +91,10 @@ function submitContact() {
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-glow-primary rounded-pill w-100 py-3 fw-semibold">
-                <i class="bi" :class="formSubmitted ? 'bi-check-circle-fill' : 'bi-send-fill'"></i>
-                <span class="ms-2">{{ formSubmitted ? 'Message Sent!' : 'Send Message' }}</span>
-              </button>
+              <BaseButton type="submit" size="lg" :block="true"
+                :icon="formSubmitted ? 'bi-check-circle-fill' : 'bi-send-fill'">
+                {{ formSubmitted ? 'Message Sent!' : 'Send Message' }}
+              </BaseButton>
             </form>
           </BaseCard>
         </div>

@@ -1,32 +1,15 @@
 <script setup>
 import { reactive } from 'vue'
 import BaseCard from '@/components/ui/base.card.vue'
+import BaseButton from './ui/base.button.vue'
+import { useAppStore } from '@/stores/use.app.store.js'
+const appStore = useAppStore();
 const stats = [
     { value: 5, suffix: '1+', label: 'Years Experience', icon: 'bi-briefcase' },
     { value: 50, suffix: '4+', label: 'Projects Completed', icon: 'bi-kanban' },
     { value: 30, suffix: '20+', label: 'Happy Clients', icon: 'bi-emoji-smile' }
 ]
-const displayedStats = reactive(stats.map(() => 0))
-let statsAnimated = false
-
-function animateStats() {
-    if (statsAnimated) return
-    statsAnimated = true
-    stats.forEach((stat, i) => {
-        const duration = 1200
-        const start = performance.now()
-        function frame(now) {
-            const progress = Math.min((now - start) / duration, 1)
-            displayedStats[i] = Math.floor(progress * stat.value)
-            if (progress < 1) requestAnimationFrame(frame)
-            else displayedStats[i] = stat.value
-        }
-        requestAnimationFrame(frame)
-    })
-}
-function scrollToSection(id) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
+const displayedStats = reactive(stats.map(() => 0));
 
 </script>
 
@@ -76,10 +59,9 @@ function scrollToSection(id) {
                             </div>
                         </div>
 
-                        <a href="#" class="btn btn-glow-primary rounded-pill px-4 py-2 mt-4"
-                            @click.prevent="scrollToSection('contact')">
-                            <i class="bi bi-chat-dots-fill me-2"></i>Hire Me
-                        </a>
+                        <BaseButton class="mt-4" icon="bi-chat-dots-fill" @click.prevent="appStore.scrollToSection('contact')">
+                            Hire Me
+                        </BaseButton>
                     </div>
                 </div>
             </div>

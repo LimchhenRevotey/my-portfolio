@@ -1,57 +1,24 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-
+import BaseButton from './ui/base.button.vue'
+import { useTypewriter } from '@/composables/use.type.writer.js'
+import { useAppStore } from '@/stores/use.app.store.js'
+const appStore = useAppStore();
 const roles = ['Full Stack Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Open Source Lover']
-const typedText = ref('')
-let roleIndex = 0
-let charIndex = 0
-let deleting = false
-let typingTimer = null
 
-function tick() {
-    const current = roles[roleIndex]
-    if (!deleting) {
-        charIndex++
-        typedText.value = current.slice(0, charIndex)
-        if (charIndex === current.length) {
-            deleting = true
-            typingTimer = setTimeout(tick, 1400)
-            return
-        }
-    } else {
-        charIndex--
-        typedText.value = current.slice(0, charIndex)
-        if (charIndex === 0) {
-            deleting = false
-            roleIndex = (roleIndex + 1) % roles.length
-        }
-    }
-    typingTimer = setTimeout(tick, deleting ? 45 : 90)
-}
+const { displayText: typedText } = useTypewriter(roles)
 
 const techStack = [
-    { name: 'Nuxt.js', icon: 'bi-triangle' },
-    { name: 'JavaScript', icon: 'bi-filetype-js' },
-    { name: 'Bootstrap', icon: 'bi-bootstrap' },
-    { name: 'Node.js', icon: 'bi-hexagon' },
-    { name: 'Express', icon: 'bi-lightning-charge' },
-    { name: 'VueJS', icon: 'bi-box-seam' },
-    { name: 'MySQL', icon: 'bi-database' }
+  { name: 'Nuxt.js', icon: 'bi-triangle' },
+  { name: 'JavaScript', icon: 'bi-filetype-js' },
+  { name: 'Bootstrap', icon: 'bi-bootstrap' },
+  { name: 'Node.js', icon: 'bi-hexagon' },
+  { name: 'Express', icon: 'bi-lightning-charge' },
+  { name: 'VueJS', icon: 'bi-box-seam' },
+  { name: 'MySQL', icon: 'bi-database' }
 ]
+
 const marqueeStack = [...techStack, ...techStack]
 
-function scrollToSection(id) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
-
-onMounted(() => {
-    tick()
-})
-
-onBeforeUnmount(() => {
-    clearTimeout(typingTimer)
-})
 </script>
 
 <template>
@@ -71,14 +38,13 @@ onBeforeUnmount(() => {
                     </p>
 
                     <div class="d-flex flex-wrap gap-3 mt-4">
-                        <a href="Limchhen_Revotey_Web_Developer.pdf" target="_blank"
-                            class="btn btn-glow-primary rounded-pill px-4 py-2">
-                            <i class="bi bi-download me-2"></i>Resume
-                        </a>
-                        <a href="#" class="btn btn-outline-glow rounded-pill px-4 py-2"
-                            @click.prevent="scrollToSection('contact')">
-                            <i class="bi bi-send me-2"></i>Contact Me
-                        </a>
+                        <BaseButton href="Limchhen_Revotey_Web_Developer.pdf" target="_blank" icon="bi-download">
+                            Resume
+                        </BaseButton>
+
+                        <BaseButton variant="outline-glow" icon="bi-send" @click.prevent="appStore.scrollToSection('contact')">
+                            Contact Me
+                        </BaseButton>
                     </div>
 
                     <!-- Tech marquee -->

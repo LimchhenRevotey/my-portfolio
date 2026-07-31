@@ -1,9 +1,10 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useAppStore } from '@/stores/use.app.store'
 import logoDark from '@/assets/images/logo.dark.png'
 import logoLight from '@/assets/images/logo.light.png'
+const appStore = useAppStore()
 
-const theme = ref('light')
 const activeSection = ref('home')
 const navOpen = ref(false)
 
@@ -16,19 +17,12 @@ const navLinks = [
   { id: 'contact', label: 'Contact' }
 ]
 
-// Ligth & Dark Mode
-function toggleTheme() {
-  theme.value = theme.value === 'dark' ? 'light' : 'dark'
-  document.documentElement.setAttribute('data-bs-theme', theme.value)
-}
-
-function scrollToSection(id) {
+const handleNavClick = (id) => {
   navOpen.value = false
-  const el = document.getElementById(id)
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  appStore.scrollToSection(id)
 }
 
-function handleScrollSpy() {
+const handleScrollSpy = () => {
   const offsets = navLinks.map((link) => {
     const el = document.getElementById(link.id)
     if (!el) return { id: link.id, top: Infinity }
@@ -39,8 +33,7 @@ function handleScrollSpy() {
 }
 
 onMounted(() => {
-  // Default Theme 
-  document.documentElement.setAttribute('data-bs-theme', theme.value)
+  appStore.applyTheme()
   window.addEventListener('scroll', handleScrollSpy, { passive: true })
 })
 
@@ -49,25 +42,26 @@ onBeforeUnmount(() => {
 })
 </script>
 
+
 <template>
   <header class="pill-nav-wrapper">
     <nav class="pill-nav container-fluid">
-      <a class="brand d-flex align-items-center" href="#home" @click.prevent="scrollToSection('home')">
+      <a class="brand d-flex align-items-center" href="#home" @click.prevent="appStore.scrollToSection('home')">
         <img :src="theme === 'dark' ? logoLight : logoDark" alt="Logo" class="img-logo" />
       </a>
 
       <ul class="nav-links d-none d-lg-flex">
         <li v-for="link in navLinks" :key="link.id">
           <a href="#" class="nav-link-item" :class="{ active: activeSection === link.id }"
-            @click.prevent="scrollToSection(link.id)">
+            @click.prevent="appStore.scrollToSection(link.id)">
             {{ link.label }}
           </a>
         </li>
       </ul>
 
       <div class="d-flex align-items-center gap-2">
-        <button class="theme-toggle" type="button" @click="toggleTheme" aria-label="Toggle theme">
-          <i class="bi" :class="theme === 'dark' ? 'bi-sun-fill' : 'bi-moon-stars-fill'"></i>
+        <button class="theme-toggle" type="button" @click="appStore.toggleTheme" aria-label="Toggle theme">
+          <i class="bi" :class="appStore.theme === 'dark' ? 'bi-sun-fill' : 'bi-moon-stars-fill'"></i>
         </button>
         <button class="theme-toggle d-lg-none" type="button" @click="navOpen = !navOpen" aria-label="Toggle menu">
           <i class="bi" :class="navOpen ? 'bi-x-lg' : 'bi-list'"></i>
@@ -78,7 +72,9 @@ onBeforeUnmount(() => {
     <transition name="fade-slide">
       <ul v-if="navOpen" class="mobile-nav d-lg-none">
         <li v-for="link in navLinks" :key="link.id">
-          <a href="#" @click.prevent="scrollToSection(link.id)">{{ link.label }}</a>
+          <a href="#" @click.prevent="handleNavClick(link.id)">
+            {{ link.label }}
+          </a>
         </li>
       </ul>
     </transition>
@@ -103,6 +99,7 @@ onBeforeUnmount(() => {
 [data-bs-theme='light'] .img-logo {
   filter: contrast(200%) brightness(100%);
 }
+
 [data-bs-theme='dark'] .img-logo {
   filter: brightness(150%) contrast(120%);
 }

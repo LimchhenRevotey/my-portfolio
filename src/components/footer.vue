@@ -1,27 +1,21 @@
 <script setup>
-import { ref } from 'vue'
 import logoDark from '@/assets/images/logo.dark.png'
 import logoLight from '@/assets/images/logo.light.png'
-
-const theme = ref('light')
-const navOpen = ref(false);
+import { useAppStore } from '@/stores/use.app.store';
+const appStore = useAppStore();
 const socials = [
   { icon: 'bi-github', label: 'GitHub', href: 'https://github.com/LimchhenRevotey' },
   { icon: 'bi-linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/limchhen-revotey-591619359/' },
   { icon: 'bi-twitter-x', label: 'Twitter', href: 'https://x.com/Revoteyl' }
 ]
-function scrollToSection(id) {
-  navOpen.value = false
-  const el = document.getElementById(id)
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
+
 </script>
 <template>
 
   <footer class="footer py-4">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
       <a href="#home" class="footer-brand d-flex align-items-center gap-2 text-decoration-none"
-        @click.prevent="scrollToSection('home')">
+        @click.prevent="appStore.scrollToSection('home')">
         <img :src="theme === 'dark' ? logoLight : logoDark" alt="Logo" class="footer-logo" />
       </a>
       <span class="text-muted small">Designed &amp; Developed by <strong>Limchhen Revotey</strong> &copy; 2026</span>
