@@ -12,7 +12,7 @@ const socials = [
 </script>
 <template>
 
-  <footer class="footer py-4">
+  <footer class="footer ">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
       <a href="#home" class="footer-brand d-flex align-items-center gap-2 text-decoration-none"
         @click.prevent="appStore.scrollToSection('home')">
@@ -20,9 +20,9 @@ const socials = [
       </a>
       <span class="text-muted small">Designed &amp; Developed by <strong>Limchhen Revotey</strong> &copy; 2026</span>
       <div class="footer-socials d-flex gap-3 fs-5">
-        <a :href="socials[0].href" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        <a :href="socials[1].href" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-        <a :href="socials[2].href" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a :href="socials[0].href" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a :href="socials[1].href" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a :href="socials[2].href" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
       </div>
 
     </div>

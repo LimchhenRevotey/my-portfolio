@@ -46,13 +46,13 @@ const {
 
             <p class="section-kicker mb-2">Follow along</p>
             <div class="d-flex gap-2">
-              <a href="https://www.linkedin.com/in/limchhen-revotey-591619359/" class="social-icon-glow"
+              <a href="https://www.linkedin.com/in/limchhen-revotey-591619359/" target="_blank" rel="noopener noreferrer" class="social-icon-glow"
                 aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-              <a href="https://github.com/LimchhenRevotey" class="social-icon-glow" aria-label="GitHub"><i
+              <a href="https://github.com/LimchhenRevotey" target="_blank" rel="noopener noreferrer" class="social-icon-glow" aria-label="GitHub"><i
                   class="bi bi-github"></i></a>
-              <a href="https://t.me/teyvtey" class="social-icon-glow" aria-label="Telegram"><i
+              <a href="https://t.me/teyvtey" target="_blank" rel="noopener noreferrer" class="social-icon-glow" aria-label="Telegram"><i
                   class="bi bi-telegram"></i></a>
-              <a href="https://www.facebook.com/revotey7" class="social-icon-glow" aria-label="Facebook"><i
+              <a href="https://www.facebook.com/revotey7" target="_blank" rel="noopener noreferrer" class="social-icon-glow" aria-label="Facebook"><i
                   class="bi bi-facebook"></i></a>
             </div>
           </div>
