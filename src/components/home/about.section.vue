@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from 'vue'
 import BaseCard from '@/components/ui/base.card.vue'
-import BaseButton from './ui/base.button.vue'
+import BaseButton from '../ui/base.button.vue'
 import { useAppStore } from '@/stores/use.app.store.js'
 const appStore = useAppStore();
 const stats = [

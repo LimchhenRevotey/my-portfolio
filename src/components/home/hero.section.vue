@@ -1,5 +1,5 @@
 <script setup>
-import BaseButton from './ui/base.button.vue'
+import BaseButton from '../ui/base.button.vue'
 import { useTypewriter } from '@/composables/use.type.writer.js'
 import { useAppStore } from '@/stores/use.app.store.js'
 const appStore = useAppStore();
