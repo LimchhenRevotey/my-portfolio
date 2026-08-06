@@ -1,6 +1,6 @@
 <script setup>
-import BaseCard from '../ui/base.card.vue'
-import BaseButton from '../ui/base.button.vue'
+import BaseCard from '../ui/BaseCard.vue'
+import BaseButton from '../ui/BaseButton.vue'
 import { useContactForm } from '@/composables/use.form.validation.js'
 const {
   contactForm,

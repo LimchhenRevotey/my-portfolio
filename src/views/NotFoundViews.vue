@@ -16,7 +16,7 @@
 
                 <div class="col-lg-7 text-center">
                     <div class="illustration-container">
-                        <img :src="bearImage" alt="404 Page Not Found Illustration" class="img-fluid bear-img" />
+                        <img src="../../../public/images/not.found.png" alt="404 Page Not Found Illustration" class="img-fluid bear-img" />
                     </div>
                 </div>
 
@@ -27,8 +27,8 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import BaseButton from '@/components/ui/base.button.vue';
-import bearImage from '@/assets/images/not.found.png'
+import BaseButton from '@/components/ui/BaseButton.vue';
+
 
 const router = useRouter()
 

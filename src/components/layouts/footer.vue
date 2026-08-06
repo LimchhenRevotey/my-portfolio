@@ -1,6 +1,6 @@
 <script setup>
-import logoDark from '@/assets/images/logo.dark.png'
-import logoLight from '@/assets/images/logo.light.png'
+import logoDark from '../../../public/images/logo.dark.png'
+import logoLight from '../../../public/images/logo.light.png'
 import { useAppStore } from '@/stores/use.app.store';
 const appStore = useAppStore();
 const socials = [

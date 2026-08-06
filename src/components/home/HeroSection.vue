@@ -1,5 +1,5 @@
 <script setup>
-import BaseButton from '../ui/base.button.vue'
+import BaseButton from '../ui/BaseButton.vue'
 import { useTypewriter } from '@/composables/use.type.writer.js'
 import { useAppStore } from '@/stores/use.app.store.js'
 const appStore = useAppStore();
@@ -63,7 +63,7 @@ const marqueeStack = [...techStack, ...techStack]
                         <div class="avatar-glass">
                             <div class="avatar-frame">
                                 <div class="avatar-inner">
-                                    <img src="@/assets/images/revotey.png" alt="Portrait of the developer"
+                                    <img src="../../../public/images/revotey.png" alt="Portrait of the developer"
                                         class="avatar-img" />
                                 </div>
                             </div>

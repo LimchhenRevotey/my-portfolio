@@ -1,5 +1,5 @@
 <script setup>
-import BaseCard from '../ui/base.card.vue';
+import BaseCard from '../ui/BaseCard.vue';
 
 const skills = [
     { name: 'HTML', icon: 'bi-filetype-html', glow: '#e34c26' },

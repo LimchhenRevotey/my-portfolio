@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from 'vue'
-import BaseCard from '@/components/ui/base.card.vue'
-import BaseButton from '../ui/base.button.vue'
+import BaseCard from '@/components/ui/BaseCard.vue'
+import BaseButton from '../ui/BaseButton.vue'
 import { useAppStore } from '@/stores/use.app.store.js'
 const appStore = useAppStore();
 const stats = [
@@ -28,7 +28,7 @@ const displayedStats = reactive(stats.map(() => 0));
                             <div class="oval-frame">
 
                                 <div class="avatar-inner-about">
-                                    <img src="@/assets/images/about.revotey.JPG" alt="Portrait of the developer"
+                                    <img src="../../../public/images/about.revotey.JPG" alt="Portrait of the developer"
                                         class="avatar-img-about" />
                                 </div>
 

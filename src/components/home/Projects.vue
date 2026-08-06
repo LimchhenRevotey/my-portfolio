@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import BaseCard from '@/components/ui/base.card.vue';
+import BaseCard from '@/components/ui/BaseCard.vue';
 const getImgUrl = (name) => {
-  return new URL(`../../assets/images/projects/${name}`, import.meta.url).href;
+  return new URL(`../../../public/images/projects/${name}`, import.meta.url).href;
 };
 
 const projects = ref([

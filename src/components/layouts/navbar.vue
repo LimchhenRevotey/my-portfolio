@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useAppStore } from '@/stores/use.app.store'
-import logoDark from '@/assets/images/logo.dark.png'
-import logoLight from '@/assets/images/logo.light.png'
+import logoDark from '../../../public/images/logo.dark.png'
+import logoLight from '../../../public/images/logo.light.png'
 const appStore = useAppStore()
 
 const activeSection = ref('home')

@@ -1,5 +1,5 @@
 <script setup>
-import BaseCard from '@/components/ui/base.card.vue'
+import BaseCard from '@/components/ui/BaseCard.vue'
 const workHistory = [
     {
         role: 'Full-Stack Developer (Pralong)',
